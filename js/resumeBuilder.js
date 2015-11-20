@@ -1,67 +1,69 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
-var awesomeThoughts;
-
-awesomeThoughts = "I'm Kyle Ofori and I'm AWESOME!";
-
-console.log(awesomeThoughts);
-
-var funThoughts = awesomeThoughts.replace('AWESOME', 'FUN (that\'s weird)');
-// $( "#main" ).append(funThoughts);
-
-var formattedName, formattedRole;
-formattedName = HTMLheaderName.replace("%data%", "Kyle Ofori");
-formattedRole = HTMLheaderRole.replace("%data%", "Mobile Developer");
-
-$("#header").append(formattedName);
-$("#header").append(formattedRole);
-
-var skills = ["Android", " JavaScript", " Mandarin"];
 var bio = {
-	"name": "Kyle Ofori",
-	"role": "Junior Developer",
-	"contacts": {
-		"mobile": "(330) 465-2060",
-		"email": "kyle.ofori@detroitlabs.com",
-		"github": "kyleofori",
-		"twitter": "kdpofori",
-		"location": "Detroit, Michigan, U.S.A."
-	},
-	"biopic": "images/fry.jpg",
-	"welcomeMessage": "Welcome to visiting my page!",
-	"skills": skills,
-	"display": function() {}
+    "name": "Kyle Ofori",
+    "role": "Junior Developer",
+    "contacts": {
+        "mobile": "(330) 465-2060",
+        "email": "kyle.ofori@detroitlabs.com",
+        "github": "kyleofori",
+        "twitter": "kdpofori",
+        "location": "Detroit, Michigan, U.S.A."
+    },
+    "biopic": "images/fry.jpg",
+    "welcomeMessage": "Welcome to visiting my page!",
+    "skills": [
+        "Android",
+        " JavaScript",
+        " Mandarin"
+    ]
 }
 
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-
-var formattedFields = [formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation,
-formattedBiopic, formattedWelcomeMessage, formattedSkills];
-
-for(var i = 0; i < formattedFields.length; i++) {
-	$("#header").append(formattedFields[i]);
+var work = {
+    "jobs": [
+        {
+            "employer": "Detroit Labs",
+            "title": "Junior Developer",
+            "location": "Detroit",
+            "dates": "8 September 2014 - present",
+            "description": "Write code, learn about Android and other mobile development frameworks"
+        }
+    ]
 }
 
-var work = {};
-work.position = "Junior Developer";
-work.employer = "Detroit Labs";
-work.years = 1;
-work.city = "Detroit";
 
-var education = {};
-education["name"] = "Princeton University";
-education["years"] = "2009-2013";
-education["city"] = "Princeton, New Jersey";
+var projects = {
+    "projects": [
+        {
+            "title": "DTE",
+            "dates": "15 December 2014 - 11 August 2015",
+            "description": "Doing the needful for an electric company",
+            "images": [
+                "http://thinkenergy.org/wp-content/uploads/2012/11/DTE-2013-EO-logo-e1377106854655.png",
+                "https://www.newlook.dteenergy.com/wps/wcm/connect/fafbf419-58c7-43b3-9029-ec55102f57a1/DTE-white-logo-updated.png?MOD=AJPERES&CACHEID=fafbf419-58c7-43b3-9029-ec55102f57a1",
+                "http://www.samuelhawley.com/forepaugh-elephant-topsy.jpg"
+            ]
+        }
+    ]
+}
 
-$("#main").append(work["position"]);
-$("#main").append(education.name);
-
+var education = {
+    "schools": [
+        {
+            "name": "Princeton University",
+            "location": "Princeton, New Jersey",
+            "degree": "AB",
+            "majors": [
+                "Economics"
+            ],
+            "dates": 2013,
+            "url": "http://www.princeton.edu/"
+        }
+    ],
+    "onlineCourses": [
+        {
+            "title": "Algorithms and Data Structures",
+            "school": "Stanford University",
+            "date": 2015,
+            "url": "http://www.coursera.org"
+        }
+    ]
+}
