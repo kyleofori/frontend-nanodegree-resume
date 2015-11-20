@@ -44,16 +44,24 @@ var formattedBiopic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGithub);
-$("#header").append(formattedTwitter);
-$("#header").append(formattedLocation);
-$("#header").append(formattedBiopic);
-$("#header").append(formattedWelcomeMessage);
-$("#header").append(formattedSkills);
+var formattedFields = [formattedMobile, formattedEmail, formattedGithub, formattedTwitter, formattedLocation,
+formattedBiopic, formattedWelcomeMessage, formattedSkills];
 
+for(var i = 0; i < formattedFields.length; i++) {
+	$("#header").append(formattedFields[i]);
+}
 
+var work = {};
+work.position = "Junior Developer";
+work.employer = "Detroit Labs";
+work.years = 1;
+work.city = "Detroit";
 
+var education = {};
+education["name"] = "Princeton University";
+education["years"] = "2009-2013";
+education["city"] = "Princeton, New Jersey";
 
+$("#main").append(work["position"]);
+$("#main").append(education.name);
 
