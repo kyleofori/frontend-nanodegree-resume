@@ -35,10 +35,38 @@ var work = {
             "location": "Detroit",
             "dates": "8 September 2014 - present",
             "description": "Write code, learn about Android and other mobile development frameworks"
+        },
+        {
+            "employer": "Jalen Rose Leadership Academy",
+            "title": "Algebra II Teacher",
+            "location": "Detroit",
+            "dates": "August 2013 - June 2014",
+            "description": "Teach 100 students Algebra II concepts to prepare them to make growth on March ACT exam"
+        },
+        {
+            "employer": "Teach For America",
+            "title": "Corps Member",
+            "location": "Detroit",
+            "dates": "June 2013 - June 2014",
+            "description": "Teach in an underserved schools in order to reduce racial achievement gap in United States"
         }
+
     ]
 }
 
+for(job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
+    $(".work-entry:last").append(formattedEmployerAndTitle);
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+    $(".work-entry:last").append(formattedDates);
+    $(".work-entry:last").append(formattedLocation);
+    $(".work-entry:last").append(formattedDescription);
+}
 
 var projects = {
     "projects": [
