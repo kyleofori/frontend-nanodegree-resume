@@ -17,6 +17,16 @@ var bio = {
     ]
 }
 
+if(bio.skills.length > 0) {
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").append(formattedName);
+    $("#header").append(HTMLskillsStart);
+    for (var i = 0; i < bio.skills.length; i++) {
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+    };
+}
+
 var work = {
     "jobs": [
         {
