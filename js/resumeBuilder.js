@@ -54,18 +54,33 @@ var work = {
     ]
 }
 
-for(job in work.jobs) {
-    $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerAndTitle);
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDates);
-    $(".work-entry:last").append(formattedLocation);
-    $(".work-entry:last").append(formattedDescription);
+function displayWork() {
+    for(job in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerAndTitle = formattedEmployer + formattedTitle;
+        $(".work-entry:last").append(formattedEmployerAndTitle);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        $(".work-entry:last").append(formattedDates);
+        $(".work-entry:last").append(formattedLocation);
+        $(".work-entry:last").append(formattedDescription);
+    }
+}
+
+displayWork();
+
+$("#main").append(internationalizeButton);
+function inName() {
+    var splitName = bio.name.split(" ");
+    console.log(splitName);
+    splitLastName = splitName[1].toUpperCase();
+    var newSplitName = splitName[0] + " " + splitLastName;
+    console.log(newSplitName);
+    bio.name = newSplitName;
+    return newSplitName;
 }
 
 var projects = {
